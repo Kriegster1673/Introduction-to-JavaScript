@@ -10,62 +10,69 @@ This will usually entail console logging the answer directly or console logging 
 returns a value, that value will be logged to the console.  An example of this would be:  console.log(theFunction(value1,value2))
 */
 
-/*
-Task 1a - Voting Age
 
-Do the following:   
-   1. Create a variable called votingAge and assign it a value
-   const votingAge = 21
-   2. Console log true if age is 18 or higher
-   if (votingAge =< 18) {console.log(true)}
+//Task 1a - Voting Age
 
-   HINT: no function required
-*/
+//Do the following:   
+   //1. Create a variable called votingAge and assign it a value 
+      const votingAge = 21
 
+   //2. Console log true if age is 18 or higher
+      if (votingAge >= 18) {console.log(true)} else {console.log(false)};
 
-
-/*
-Task 1b - Values
-
-Do the following:   
-   1. Declare two variables and assign them values
-   2. Use a conditional to change the value of the 1st variable based on the value assigned to the 2nd variable
-   3. Console log the new value of the 1st variable
-
-   HINT: no function required
-*/
+   //HINT: no function required
 
 
 
 
+//Task 1b - Values
 
-/*
-Task 1c - Convert Strings to Numbers
+//Do the following:   
+  // 1. Declare two variables and assign them values
+      let man = 'boy'
+      let woman = 'girl'
 
-Do the following:   
-   1. Declare a string type variable with the value of "1999"
-   2. Convert the string value of "1999" to a integer value of 1999
-   3. Console log the result
-
-   HINT: look up the Number method
-*/
-
-
+  // 2. Use a conditional to change the value of the 1st variable based on the value assigned to the 2nd variable
+      if (woman === 'girl') {man = 'guy'};
+  // 3. Console log the new value of the 1st variable
+console.log(man);
+   //HINT: no function required
 
 
-/*
-Task 1d - Multiply
+
+
+
+
+
+//Task 1c - Convert Strings to Numbers
+
+//Do the following:   
+   //1. Declare a string type variable with the value of "1999"
+      let millionaire = 1999
+
+  // 2. Convert the string value of "1999" to a integer value of 1999
+      Math.floor(millionaire);
+
+   //3. Console log the result
+      console.log(millionaire);
+
+  // HINT: look up the Number method
+
+
+
+
+
+
+//Task 1d - Multiply
  
-Do the following:   
-   1. Invoke the multiply function below and pass it two numbers
-   2. Receive the parameters: a and b
-   3. Multiply a and b and return the answer
-*/
+//Do the following:   
+  // 1. Invoke the multiply function below and pass it two numbers
+  // 2. Receive the parameters: a and b
+  // 3. Multiply a and b and return the answer
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
-}
 
+function multiply(a,b) {return a * b}
+console.log(multiply(2,5));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -78,9 +85,8 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
-}
+function dogYears(age){return age * 7};
+console.log(dogYears(20));
 
 
 
@@ -111,8 +117,11 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(weight,age){
+  if (age <= 1 && weight > 15) {return weight * .2}
+  else if (age <=1 && weight < 16) {return weight *.3}
+  else if (age <=1 && weight < 11) {return weight *.4}
+  else if (age <=1 && weight < 6) {return weight *.5}
 }
 
 
@@ -139,11 +148,21 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+const rock = 0
+const paper = 1 
+const scissors = 2
+let computerChoice = Math.floor(Math.random()*3)
 
 function game(user, computer){
-  /*add your code here*/
+if (user === computer) {return "it's a tie"}
+else if (user === 0 && computer === 1) {return "you lose!"}
+else if (user === 0 && computer === 2) {return "you win!"}
+else if (user === 1 && computer === 0) {return "you win!"}
+else if (user === 1 && computer === 2) {return "you lose!"}
+else if (user === 2 && computer === 0) {return "you lose!"}
+else if (user === 2 && computer === 1) {return "you win!"}
 }
-
+console.log(game(rock,computerChoice));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -157,10 +176,9 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(kilometers){return kilometers/1.609
 }
-
+console.log(miles(1));
 
 
 //Task 5b - Feet to CM
@@ -171,10 +189,9 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){return cm/30.48
 }
-
+console.log(feet(10));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
