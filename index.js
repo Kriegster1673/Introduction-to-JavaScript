@@ -204,8 +204,7 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(startingNumber){for (startingNumber <= 99; startingNumber === 0; startingNumber--) {return '{startingNumber} bottles of soda on the wall, {startingNumber} bottles of soda, take one down pass it around {startingNumber - 1} bottles of soda on the wall '}
 }
 
 
@@ -224,11 +223,14 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(number){
+if (number >= 100) {return 'you got an A'}
+else if (number <= 89) {return 'you got an B'}
+else if (number <= 79) {return 'you got an C'}
+else if (number <= 69) {return 'you got an D'}
+else if (number <=59) {return 'you got an F'}
 }
-
-
+console.log(grade(60));
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
