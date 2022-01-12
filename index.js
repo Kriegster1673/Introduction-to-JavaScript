@@ -118,12 +118,20 @@ NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.449
 */  
 
 function hungryDog(weight,age){
-  if (age <= 1 && weight > 15) {return weight * .2}
-  else if (age <=1 && weight < 16) {return weight *.3}
-  else if (age <=1 && weight < 11) {return weight *.4}
-  else if (age <=1 && weight < 6) {return weight *.5}
+    if (age >= 1 && weight <=5) {return weight * 0.05}
+    else if (age >= 1 && weight >=6 && weight <=10) {return weight * 0.04}
+    else if (age >= 1 && weight >=11 && weight <=15){return weight * 0.03}
+    else if (age >= 1 && weight >15) {return weight * 0.02}
+
+
+    else if (age < 1 && age >=.583) {return weight * 0.04}
+    else if (age < .0583 && age>= 0.333) {return weight * 0.05}
+    else if (age < 0.333) {return weight * 0.10}
+  
+  
 }
 
+console.log(hungryDog(4,1));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -148,21 +156,23 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-const rock = 0
-const paper = 1 
-const scissors = 2
+
 let computerChoice = Math.floor(Math.random()*3)
+
+if (computerChoice === 0) {computerChoice = 'rock'}
+else if (computerChoice === 1) {computerChoice = 'paper'}
+else if (computerChoice === 2) {computerChoice = 'scissors'}
 
 function game(user, computer){
 if (user === computer) {return "it's a tie"}
-else if (user === 0 && computer === 1) {return "you lose!"}
-else if (user === 0 && computer === 2) {return "you win!"}
-else if (user === 1 && computer === 0) {return "you win!"}
-else if (user === 1 && computer === 2) {return "you lose!"}
-else if (user === 2 && computer === 0) {return "you lose!"}
-else if (user === 2 && computer === 1) {return "you win!"}
+else if (user === 'rock' && computer === 'paper') {return "you lose!"}
+else if (user === 'rock' && computer === 'scissors') {return "you win!"}
+else if (user === 'paper' && computer === 'rock') {return "you win!"}
+else if (user === 'paper' && computer === 'scissors') {return "you lose!"}
+else if (user === 'scissors' && computer === 'rock') {return "you lose!"}
+else if (user === 'scissors' && computer === 'paper') {return "you win!"}
 }
-console.log(game(rock,computerChoice));
+console.log(game('rock',computerChoice));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -176,9 +186,9 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(kilometers){return kilometers/1.609
+function miles(kilometers){return kilometers * 0.621371
 }
-console.log(miles(1));
+console.log(miles(10));
 
 
 //Task 5b - Feet to CM
@@ -204,8 +214,10 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(startingNumber){for (startingNumber <= 99; startingNumber === 0; startingNumber--) {return '{startingNumber} bottles of soda on the wall, {startingNumber} bottles of soda, take one down pass it around {startingNumber - 1} bottles of soda on the wall '}
+function annoyingSong(number){
+  for (let i = number; i > 0; i--) {return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i -1} bottles of soda on the wall`}
 }
+
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -220,15 +232,15 @@ Using the grade function below do the following:
  80-89 should return 'you got a B'
  70-79 should return 'you got a C'
  60-69 should return 'you got a D'
- below should return 'you got an F'
+ below should return 'you got a F'
 */
 
 function grade(number){
-if (number >= 100) {return 'you got an A'}
-else if (number <= 89) {return 'you got an B'}
-else if (number <= 79) {return 'you got an C'}
-else if (number <= 69) {return 'you got an D'}
-else if (number <=59) {return 'you got an F'}
+if (number >= 90 && number <=100) {return "you got an A"}
+else if (number >=80 && number <=89) {return "you got a B"}
+else if (number >=70 && number <=79) {return "you got a C"}
+else if (number >=60 && number <=69) {return "you got a D"}
+else if (number <=59) {return "you got an F"}
 }
 console.log(grade(60));
 
